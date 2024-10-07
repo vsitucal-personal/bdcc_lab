@@ -11,7 +11,7 @@ def thousands_formatter(x, pos):
 
 def plot_multiple_line_graphs(
     x_list, y_list, x_labels=None, y_labels=None, titles=None,
-    use_k=True, show_grid=False
+    use_k=None, show_grid=False
 ):
     """
     Plots multiple line graphs in subplots and formats the y-axis in thousands.
@@ -44,7 +44,7 @@ def plot_multiple_line_graphs(
     # Flatten axes for easy indexing
     axes = [ax for sublist in axes for ax in sublist]
 
-    for i, (x, y) in enumerate(zip(x_list, y_list)):
+    for i, (use_k_, x, y) in enumerate(zip(use_k, x_list, y_list)):
         ax = axes[i]
         ax.plot(x, y, marker='o', linestyle='-', color='b')
 
@@ -54,7 +54,7 @@ def plot_multiple_line_graphs(
         ax.set_title(titles[i] if titles else f'Graph {i+1}')
 
         # Format the y-axis to show values in thousands
-        if use_k:
+        if use_k_:
             ax.yaxis.set_major_formatter(FuncFormatter(thousands_formatter))
 
         # Show grid
