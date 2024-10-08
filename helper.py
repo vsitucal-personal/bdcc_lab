@@ -92,7 +92,7 @@ def plot_multiple_line_graphs2(
         ax.grid(show_grid)
 
     # Annotate figure number at the top of the figure
-    fig.text(0.5, -0.015, f'Figure {start_figure_number}', ha='center', fontsize=14, weight='bold')
+    fig.text(0.5, -0.015, f'Figure {start_figure_number}', ha='center', fontsize=13)
 
     # Hide any unused axes
     for j in range(i + 1, len(axes)):
