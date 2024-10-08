@@ -27,6 +27,7 @@ def trillions_formatter(x, pos):
 def plot_multiple_line_graphs2(
     x_list, y_list, x_labels=None, y_labels=None, titles=None,
     formatter=None, use_legend=None, show_grid=False, max_cols=3,
+    start_figure_number=1  # New parameter for starting figure number
 ):
     """
     Plots multiple line graphs in subplots and formats the y-axis in thousands.
@@ -38,8 +39,10 @@ def plot_multiple_line_graphs2(
     x_labels (list of str): List of labels for the X-axes
     y_labels (list of str): List of labels for the Y-axes
     titles (list of str): List of titles for each subplot
-    use_k (bool): Whether to format the y-axis in thousands
+    formatter (list of callable): List of formatting functions for the y-axes
+    use_legend (list of bool): Whether to show legend for each plot
     show_grid (bool): Whether to show grid on each plot
+    start_figure_number (int): Starting number for figure annotations
     """
     n_plots = len(x_list)
     n_cols = min(n_plots, max_cols)
@@ -74,12 +77,12 @@ def plot_multiple_line_graphs2(
         else:
             ax.plot(x, y[0], marker='o', linestyle='-', color=y[2], label=y[1])
             if use_legend_:
-                    ax.legend()
+                ax.legend()
 
         # Labels and title
         ax.set_xlabel(x_labels[i] if x_labels else 'X-axis')
         ax.set_ylabel(y_labels[i] if y_labels else 'Y-axis')
-        ax.set_title(titles[i] if titles else f'Graph {i+1}')
+        ax.set_title(titles[i] if titles else f'Graph {i + 1}')
 
         # Format the y-axis to show values in thousands
         if formatter_:
@@ -87,6 +90,9 @@ def plot_multiple_line_graphs2(
 
         # Show grid
         ax.grid(show_grid)
+
+    # Annotate figure number at the top of the figure
+    fig.text(0.5, -0.015, f'Figure {start_figure_number}', ha='center', fontsize=14, weight='bold')
 
     # Hide any unused axes
     for j in range(i + 1, len(axes)):
