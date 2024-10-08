@@ -27,7 +27,7 @@ def trillions_formatter(x, pos):
 def plot_multiple_line_graphs2(
     x_list, y_list, x_labels=None, y_labels=None, titles=None,
     formatter=None, use_legend=None, show_grid=False, max_cols=3,
-    start_figure_number=1  # New parameter for starting figure number
+    start_figure_number=1, marker="o",  # New parameter for starting figure number
 ):
     """
     Plots multiple line graphs in subplots and formats the y-axis in thousands.
@@ -71,11 +71,11 @@ def plot_multiple_line_graphs2(
         # Check if x and y are lists or array-like
         if isinstance(x, (list, pd.Series)) and isinstance(y, (list, pd.Series)):
             for x_, y_ in zip(x, y):
-                ax.plot(x_, y_[0], marker='o', linestyle='-', color=y_[2], label=y_[1])
+                ax.plot(x_, y_[0], marker=marker, linestyle='-', color=y_[2], label=y_[1])
                 if use_legend_:
                     ax.legend()
         else:
-            ax.plot(x, y[0], marker='o', linestyle='-', color=y[2], label=y[1])
+            ax.plot(x, y[0], marker=marker, linestyle='-', color=y[2], label=y[1])
             if use_legend_:
                 ax.legend()
 
