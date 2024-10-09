@@ -67,8 +67,7 @@ def plot_multiple_line_graphs2(
         if y == []:
             ax.axis('off')
             continue
-        
-        # Check if x and y are lists or array-like
+        #  Check if x and y are lists or array-like
         if isinstance(x, (list, pd.Series)) and isinstance(y, (list, pd.Series)):
             for x_, y_ in zip(x, y):
                 ax.plot(x_, y_[0], marker=marker, linestyle='-', color=y_[2], label=y_[1])
@@ -104,6 +103,7 @@ def plot_multiple_line_graphs2(
 
 
 def read_sql_file(path):
+    """Reads and returns the contents of a SQL file as a string."""
     with open(path, "r") as file:
         return_string = file.read()
     return return_string
