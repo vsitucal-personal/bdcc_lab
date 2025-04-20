@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7517,11 +7518,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">explode</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">ArrayType</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
-<span class="kn">from</span> <span class="nn">helper</span> <span class="kn">import</span> <span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">SparkSession</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql.functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">explode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">ArrayType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">helper</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">read_sql_file</span><span class="p">,</span> 
     <span class="n">plot_multiple_line_graphs2</span><span class="p">,</span>
     <span class="n">thousands_formatter</span><span class="p">,</span>
@@ -7529,9 +7530,9 @@ a.anchor-link {
     <span class="n">billions_formatter</span><span class="p">,</span>
     <span class="n">trillions_formatter</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">FuncFormatter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncFormatter</span>
 </pre></div>
 </div>
 </div>
@@ -10160,7 +10161,7 @@ qI8YbImIiEh2SjhaS0RE/cBgS0RERLLS1iCiqYJ71xIRUd/9H09qiOIsBkIqAAAAAElFTkSuQmCC
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="BTC-and-ETCH-Transaction-Volume-in-USD-using-Coingecko-Historical-Prices">BTC and ETCH Transaction Volume in USD using Coingecko Historical Prices<a class="anchor-link" href="#BTC-and-ETCH-Transaction-Volume-in-USD-using-Coingecko-Historical-Prices">¶</a></h3><p>ETH and BTC daily prices are sourced from Coingecko website<sup>4</sup>. The prices are multiplied with the total transaction value over the years to get the Transaction volume in USD</p>
+<h3 id="BTC-and-ETH-Transaction-Volume-in-USD-using-Coingecko-Historical-Prices">BTC and ETH Transaction Volume in USD using Coingecko Historical Prices<a class="anchor-link" href="#BTC-and-ETH-Transaction-Volume-in-USD-using-Coingecko-Historical-Prices">¶</a></h3><p>ETH and BTC daily prices are sourced from Coingecko website<sup>4</sup>. The prices are multiplied with the total transaction value over the years to get the Transaction volume in USD</p>
 </div>
 </div>
 </div>
